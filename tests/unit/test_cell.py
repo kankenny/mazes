@@ -1,4 +1,4 @@
-from mazes.cells.cell import BasicCell
+from mazes.cells.basic_cell import BasicCell
 
 
 def test_cell_init() -> None:
