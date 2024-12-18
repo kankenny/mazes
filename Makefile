@@ -11,6 +11,6 @@ lint:
 	mypy .
 
 test:
-	pytest .
+	pytest . -s
 
 all: lint test
