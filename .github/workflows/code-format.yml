@@ -59,7 +59,7 @@ jobs:
           git diff
           exit 0
 
-    type-check:
+    type_check:
       runs-on: ubuntu-latest
       needs: lint
 
