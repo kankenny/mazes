@@ -1,8 +1,8 @@
-from mazes.cells.cell import Cell
+from mazes.cells.cell import BasicCell
 
 
 def test_cell_init() -> None:
-    c = Cell(1, 2)
+    c = BasicCell(1, 2)
 
     assert c.row == 1 and c.col == 2
     assert (
