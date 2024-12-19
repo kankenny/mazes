@@ -15,7 +15,9 @@ class BinaryTree:
             if cell.east_cell:
                 neighbors.append(cell.east_cell)
 
-            neighbor = random.sample(neighbors, k=1)[0]
+            
+            if len(neighbors) != 0:
+                neighbor = random.sample(neighbors, k=1)[0]
 
             if neighbor:
                 cell.link(neighbor)
