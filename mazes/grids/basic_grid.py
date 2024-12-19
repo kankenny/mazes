@@ -1,4 +1,5 @@
-from typing import Iterator, Optional
+import random
+from typing import Generator, Iterator, Optional, Union
 
 from mazes.cells.basic_cell import BasicCell
 
@@ -51,6 +52,21 @@ class BasicGrid:
             return cell
         else:
             raise StopIteration
+
+    def random_cell(self) -> Union[BasicCell, None]:
+        row = random.randint(0, self.rows - 1)
+        col = random.randint(0, self.cols - 1)
+
+        return self[row, col]
+
+    def iter_each_rows(self) -> Generator[list[BasicCell], None, None]:
+        for i in range(self.rows):
+            yield self.grid[i][:]
+
+    def iter_each_cell(self) -> Generator[BasicCell, None, None]:
+        for row in self.iter_each_rows():
+            for cell in row:
+                yield cell
 
     @staticmethod
     def prepare_grid(rows: int, cols: int) -> list[list[BasicCell]]:
