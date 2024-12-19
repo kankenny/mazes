@@ -53,6 +53,30 @@ class BasicGrid:
         else:
             raise StopIteration
 
+    def __str__(self):
+        output = "\n+" + "---+" * self.cols + "\n"
+
+
+        body = "   "
+        corner = "+"
+
+        for row in self.iter_each_rows():
+            top = "|"
+            bottom = "+"
+
+            for cell in row:
+                east_boundary:str = " " if cell.is_linked(cell.east_cell) else "|"
+                top = top + body + east_boundary
+
+                south_boundary:str = "   " if cell.is_linked(cell.south_cell) else "---"
+                bottom = bottom + south_boundary + corner
+            
+            output = output + top + "\n"
+            output = output + bottom + "\n"
+
+        return output
+        
+
     def random_cell(self) -> BasicCell | None:
         row = random.randint(0, self.rows - 1)
         col = random.randint(0, self.cols - 1)
