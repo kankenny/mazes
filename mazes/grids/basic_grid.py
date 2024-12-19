@@ -56,7 +56,6 @@ class BasicGrid:
     def __str__(self) -> str:
         output = "\n+" + "---+" * self.cols + "\n"
 
-
         body = "   "
         corner = "+"
 
@@ -65,17 +64,18 @@ class BasicGrid:
             bottom = "+"
 
             for cell in row:
-                east_boundary:str = " " if cell.is_linked(cell.east_cell) else "|"
+                east_boundary: str = " " if cell.is_linked(cell.east_cell) else "|"  # type: ignore[arg-type]
                 top = top + body + east_boundary
 
-                south_boundary:str = "   " if cell.is_linked(cell.south_cell) else "---"
+                south_boundary: str = (
+                    "   " if cell.is_linked(cell.south_cell) else "---"  # type: ignore[arg-type]
+                )
                 bottom = bottom + south_boundary + corner
-            
+
             output = output + top + "\n"
             output = output + bottom + "\n"
 
         return output
-        
 
     def random_cell(self) -> BasicCell | None:
         row = random.randint(0, self.rows - 1)
