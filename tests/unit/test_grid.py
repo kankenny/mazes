@@ -14,3 +14,5 @@ def test_basic_grid() -> None:
 
     for cell in grid:
         assert isinstance(cell, BasicCell)
+
+    grid.to_png()

@@ -1,6 +1,8 @@
 import random
 from typing import Generator, Iterator
 
+from PIL import Image, ImageDraw
+
 from mazes.cells.basic_cell import BasicCell
 
 
@@ -76,6 +78,34 @@ class BasicGrid:
             output = output + bottom + "\n"
 
         return output
+
+    def to_png(self, cell_size: int = 10, output_name: str = "maze.png") -> None:
+        img_width = cell_size * self.cols
+        img_height = cell_size * self.rows
+
+        background = (255, 255, 255)
+        wall = (0, 0, 0)
+
+        img = Image.new("RGBA", (img_width + 1, img_height + 1), background)
+        draw = ImageDraw.Draw(img)
+
+        for cell in self.iter_each_cell():
+            x1 = cell.col * cell_size
+            y1 = cell.row * cell_size
+            x2 = (cell.col + 1) * cell_size
+            y2 = (cell.row + 1) * cell_size
+
+            if not cell.north_cell:
+                draw.line([x1, y1, x2, y1], wall, 1, None)
+            if not cell.west_cell:
+                draw.line([x1, y1, x1, y2], wall, 1, None)
+            if not cell.is_linked(cell.east_cell):  # type: ignore[arg-type]
+                draw.line([x2, y1, x2, y2], wall, 1, None)
+            if not cell.is_linked(cell.south_cell):  # type: ignore[arg-type]
+                draw.line([x1, y2, x2, y2], wall, 1, None)
+
+        img.show()
+        img.save(output_name)
 
     def random_cell(self) -> BasicCell | None:
         row = random.randint(0, self.rows - 1)
