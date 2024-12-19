@@ -1,9 +1,10 @@
 import random
 
+from mazes.mazes.base_maze import BaseMaze
 from mazes.grids.basic_grid import BasicGrid
 
 
-class BinaryTree:
+class BinaryTree(BaseMaze):
     def __init__(self, rows: int, cols: int) -> None:
         self.grid: BasicGrid = BasicGrid(rows, cols)
 
@@ -22,5 +23,3 @@ class BinaryTree:
             if neighbor:
                 cell.link(neighbor)
     
-    def __str__(self) -> str:
-        return str(self.grid)

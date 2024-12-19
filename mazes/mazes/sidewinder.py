@@ -1,9 +1,10 @@
 import random
 
+from mazes.mazes.base_maze import BaseMaze
 from mazes.grids.basic_grid import BasicGrid
 
 
-class Sidewinder:
+class Sidewinder(BaseMaze):
     def __init__(self, rows: int, cols: int) -> None:
         self.grid: BasicGrid = BasicGrid(rows, cols)
 
@@ -26,7 +27,3 @@ class Sidewinder:
                     run_list.clear()
                 else:
                     cell.link(cell.east_cell)
-                    
-        
-    def __str__(self) -> str:
-        return str(self.grid)
