@@ -1,5 +1,5 @@
 import random
-from typing import Generator, Iterator, Optional, Union
+from typing import Generator, Iterator
 
 from mazes.cells.basic_cell import BasicCell
 
@@ -36,7 +36,7 @@ class BasicGrid:
         self._col = 0
         return self
 
-    def __next__(self) -> Optional[BasicCell]:
+    def __next__(self) -> BasicCell | None:
         """
         Return the next cell in the grid. Raise StopIteration when all
         cells are visited.
@@ -53,7 +53,7 @@ class BasicGrid:
         else:
             raise StopIteration
 
-    def random_cell(self) -> Union[BasicCell, None]:
+    def random_cell(self) -> BasicCell | None:
         row = random.randint(0, self.rows - 1)
         col = random.randint(0, self.cols - 1)
 
