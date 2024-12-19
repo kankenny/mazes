@@ -73,7 +73,7 @@ jobs:
           python-version: "3.10"
 
       - name: Install dependencies for mypy
-        run: pip install mypy
+        run: make setup-dev
 
       - name: Run Flake8
         run: mypy .
