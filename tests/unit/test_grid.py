@@ -10,5 +10,5 @@ def test_basic_grid() -> None:
     assert len(grid) == (SIZE * SIZE)
 
     for cell in grid:
-        print(cell)
+        print(repr(cell), cell)
         assert isinstance(cell, BasicCell)

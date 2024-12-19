@@ -16,6 +16,12 @@ class BasicCell:
 
         self.links: defaultdict["BasicCell", bool] = defaultdict(bool)
 
+    def __str__(self) -> str:
+        return f"Basic Cell: at row={self.row} and col={self.col}"
+
+    def __repr__(self) -> str:
+        return f"BasicCell(row={self.row}, col={self.col})"
+
     @property
     def north_cell(self) -> Optional["BasicCell"]:
         if self._north_cell and self._north_cell not in self.neighbors:

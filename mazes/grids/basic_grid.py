@@ -8,8 +8,7 @@ class BasicGrid:
         self.rows: int = rows
         self.cols: int = cols
 
-        self.grid: list[list[BasicCell]] = self.prepare_grid(
-            self.rows, self.cols)
+        self.grid: list[list[BasicCell]] = self.prepare_grid(self.rows, self.cols)
         self.prepare_cells(self.grid)
 
     def __getitem__(self, index: tuple[int, int]) -> BasicCell | None:
