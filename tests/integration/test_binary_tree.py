@@ -6,4 +6,4 @@ def test_binary_tree():
 
     assert maze is not None
 
-    print(maze.grid)
+    print(maze)

@@ -21,3 +21,6 @@ class BinaryTree:
 
             if neighbor:
                 cell.link(neighbor)
+    
+    def __str__(self) -> str:
+        return str(self.grid)

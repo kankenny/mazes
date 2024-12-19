@@ -53,7 +53,7 @@ class BasicGrid:
         else:
             raise StopIteration
 
-    def __str__(self):
+    def __str__(self) -> str:
         output = "\n+" + "---+" * self.cols + "\n"
 
 
