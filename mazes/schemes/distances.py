@@ -1,21 +1,19 @@
 from typing import Dict
 
-from mazes.cells.basic_cell import BasicCell
-
-DistanceType = Dict[BasicCell, int]
+DistanceType = Dict["BasicCell", int]  # type: ignore[name-defined]
+# -- see tox.ini
 
 
 class Distances:
-    def __init__(self, root: BasicCell) -> None:
+    def __init__(self, root: "BasicCell") -> None:  # type: ignore[name-defined]
         self.root = root
-        self.cells: DistanceType = {}
-        self.cells[self.root] = 0
+        self.cells: DistanceType = {root: 0}
 
-    def __getitem__(self, cell: BasicCell) -> int:
+    def __getitem__(self, cell: "BasicCell") -> int:  # type: ignore[name-defined]
         return self.cells[cell]
 
-    def set_distance(self, cell: BasicCell, distance: int) -> None:
-        self.cells[self.root] = distance
+    def set_distance(self, cell: "BasicCell", distance: int) -> None:  # type: ignore[name-defined]
+        self.cells[cell] = distance
 
-    def get_cells(self) -> list[BasicCell]:
+    def get_cells(self) -> list["BasicCell"]:  # type: ignore[name-defined]
         return list(self.cells.keys())

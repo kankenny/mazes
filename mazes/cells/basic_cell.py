@@ -1,6 +1,8 @@
 from collections import defaultdict
 from typing import Optional
 
+from mazes.schemes.distances import Distances
+
 
 class BasicCell:
     def __init__(self, row: int, col: int) -> None:
@@ -82,3 +84,23 @@ class BasicCell:
 
     def get_neighbors(self) -> list["BasicCell"]:
         return self.neighbors
+
+    def distances(self) -> Distances:
+        distances = Distances(self)
+        frontier = [self]
+
+        while len(frontier) != 0:
+            new_frontier = []
+
+            for cell in frontier:
+                for linked_cell in cell.get_links():
+                    if distances[linked_cell]:
+                        print(linked_cell)
+                        continue
+
+                    distances.set_distance(cell, distances[cell] + 1)
+                    new_frontier.append(linked_cell)
+
+            frontier = new_frontier
+
+        return distances
