@@ -4,8 +4,8 @@ from mazes.grids.basic_grid import BasicGrid
 
 
 class BinaryTree:
-    def __init__(self, grid) -> None:
-        self.grid: BasicGrid = grid
+    def __init__(self, rows: int, cols: int) -> None:
+        self.grid: BasicGrid = BasicGrid(rows, cols)
 
         for cell in self.grid.iter_each_cell():
             neighbors = []
