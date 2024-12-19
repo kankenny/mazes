@@ -7,6 +7,9 @@ def test_basic_grid() -> None:
 
     grid = BasicGrid(SIZE, SIZE)
 
+    sample_cell: BasicCell = grid[0, 0]
+    print(sample_cell, repr(sample_cell))
+
     assert len(grid) == (SIZE * SIZE)
 
     for cell in grid:
