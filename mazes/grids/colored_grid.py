@@ -1,4 +1,4 @@
-from mazes.schemes.distances import Distances
+from mazes.heuristics.distances import Distances
 
 from .basic_grid import BasicGrid
 
