@@ -3,10 +3,11 @@ from mazes.mazes.binary_tree import BinaryTree
 
 
 def test_distance_grid_dijkstra():
-    grid = DistanceGrid(5, 5)
+    grid = DistanceGrid(10, 10)
     maze = BinaryTree(grid)()
 
-    start = grid[0, 0]
+    start_coord = 0, 0
+    start = grid[start_coord]
     distances = start.distances()
 
     maze.distances = distances
