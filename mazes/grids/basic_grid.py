@@ -57,8 +57,6 @@ class BasicGrid:
 
     def __str__(self) -> str:
         output = "\n+" + "---+" * self.cols + "\n"
-
-        body = "   "
         corner = "+"
 
         for row in self.iter_each_rows():
@@ -66,6 +64,7 @@ class BasicGrid:
             bottom = "+"
 
             for cell in row:
+                body = f" {self.contents_of(cell)} "
                 east_boundary: str = " " if cell.is_linked(cell.east_cell) else "|"  # type: ignore[arg-type]
                 top = top + body + east_boundary
 
@@ -78,6 +77,9 @@ class BasicGrid:
             output = output + bottom + "\n"
 
         return output
+
+    def contents_of(self, cell: BasicCell) -> str:
+        return " "
 
     def to_png(self, cell_size: int = 10, output_name: str = "maze.png") -> None:
         img_width = cell_size * self.cols

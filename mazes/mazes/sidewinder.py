@@ -1,12 +1,12 @@
 import random
+from random import choice
 
+from mazes.grids.basic_grid import BasicGrid
 from mazes.mazes.base_maze import BaseMaze
 
 
 class Sidewinder(BaseMaze):
-    def __init__(self, rows: int, cols: int) -> None:
-        super().__init__(rows, cols)
-
+    def __call__(self) -> BasicGrid:
         for row in self.grid.iter_each_rows():
             run_list = []
 
@@ -21,9 +21,11 @@ class Sidewinder(BaseMaze):
                 )
 
                 if should_close_out:
-                    member = random.sample(run_list, k=1)[0]
+                    member = choice(run_list)
                     if member.north_cell:
                         member.link(member.north_cell)
                     run_list.clear()
                 else:
                     cell.link(cell.east_cell)  # type: ignore[arg-type]
+
+        return self.grid

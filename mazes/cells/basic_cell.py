@@ -86,7 +86,7 @@ class BasicCell:
         return self.neighbors
 
     def distances(self) -> Distances:
-        distances = Distances(self)
+        distances = Distances(root=self)
         frontier = [self]
 
         while len(frontier) != 0:
@@ -94,11 +94,10 @@ class BasicCell:
 
             for cell in frontier:
                 for linked_cell in cell.get_links():
-                    if distances[linked_cell]:
-                        print(linked_cell)
+                    if linked_cell in distances.cells:
                         continue
 
-                    distances.set_distance(cell, distances[cell] + 1)
+                    distances.set_distance(linked_cell, distances[cell] + 1)
                     new_frontier.append(linked_cell)
 
             frontier = new_frontier

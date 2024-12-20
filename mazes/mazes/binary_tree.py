@@ -1,12 +1,11 @@
-import random
+from random import choice
 
+from mazes.grids.basic_grid import BasicGrid
 from mazes.mazes.base_maze import BaseMaze
 
 
 class BinaryTree(BaseMaze):
-    def __init__(self, rows: int, cols: int) -> None:
-        super().__init__(rows, cols)
-
+    def __call__(self) -> BasicGrid:
         for cell in self.grid.iter_each_cell():
             neighbors = []
 
@@ -16,7 +15,9 @@ class BinaryTree(BaseMaze):
                 neighbors.append(cell.east_cell)
 
             if len(neighbors) != 0:
-                neighbor = random.sample(neighbors, k=1)[0]
+                neighbor = choice(neighbors)
 
             if neighbor:
                 cell.link(neighbor)
+
+        return self.grid

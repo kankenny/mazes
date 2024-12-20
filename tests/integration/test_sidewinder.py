@@ -1,8 +1,10 @@
+from mazes.grids.basic_grid import BasicGrid
 from mazes.mazes.sidewinder import Sidewinder
 
 
 def test_sidewinder():
-    maze = Sidewinder(100, 100)
+    grid = BasicGrid(5, 5)
+    maze = Sidewinder(grid)()
 
     assert maze is not None
 

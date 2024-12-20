@@ -1,8 +1,10 @@
+from mazes.grids.basic_grid import BasicGrid
 from mazes.mazes.binary_tree import BinaryTree
 
 
 def test_binary_tree():
-    maze = BinaryTree(100, 100)
+    grid = BasicGrid(5, 5)
+    maze = BinaryTree(grid)()
 
     assert maze is not None
 
