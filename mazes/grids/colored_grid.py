@@ -19,7 +19,7 @@ class ColoredGrid(BasicGrid):
     def background_color_for(self, cell):
         farthest_cell, max_dist = self.distances.max()
 
-        distance = self.distances.cells[cell] if cell in self.distances.cells else None
+        distance = self.distances.cells[cell] if cell in self.distances.cells else 0.1
         intensity = (max_dist - distance) / max_dist
 
         dark = round(255 * intensity)

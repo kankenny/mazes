@@ -117,11 +117,11 @@ class BasicGrid:
         img.show()
         img.save(output_name)
 
-    def random_cell(self) -> BasicCell | None:
+    def random_cell(self) -> BasicCell:
         row = random.randint(0, self.rows - 1)
         col = random.randint(0, self.cols - 1)
 
-        return self[row, col]
+        return self[row, col]  # type: ignore[return-value]
 
     def iter_each_rows(self) -> Generator[list[BasicCell], None, None]:
         for i in range(self.rows):

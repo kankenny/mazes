@@ -26,43 +26,43 @@ class BasicCell:
 
     @property
     def north_cell(self) -> Optional["BasicCell"]:
-        if self._north_cell and self._north_cell not in self.neighbors:
-            self.neighbors.append(self._north_cell)
         return self._north_cell
 
     @north_cell.setter
     def north_cell(self, cell: Optional["BasicCell"]) -> None:
         self._north_cell = cell
+        if self._north_cell and self._north_cell not in self.neighbors:
+            self.neighbors.append(self._north_cell)
 
     @property
     def south_cell(self) -> Optional["BasicCell"]:
-        if self._south_cell and self._south_cell not in self.neighbors:
-            self.neighbors.append(self._south_cell)
         return self._south_cell
 
     @south_cell.setter
     def south_cell(self, cell: Optional["BasicCell"]) -> None:
         self._south_cell = cell
+        if self._south_cell and self._south_cell not in self.neighbors:
+            self.neighbors.append(self._south_cell)
 
     @property
     def east_cell(self) -> Optional["BasicCell"]:
-        if self._east_cell and self._east_cell not in self.neighbors:
-            self.neighbors.append(self._east_cell)
         return self._east_cell
 
     @east_cell.setter
     def east_cell(self, cell: Optional["BasicCell"]) -> None:
         self._east_cell = cell
+        if self._east_cell and self._east_cell not in self.neighbors:
+            self.neighbors.append(self._east_cell)
 
     @property
     def west_cell(self) -> Optional["BasicCell"]:
-        if self._west_cell and self._west_cell not in self.neighbors:
-            self.neighbors.append(self._west_cell)
         return self._west_cell
 
     @west_cell.setter
     def west_cell(self, cell: Optional["BasicCell"]) -> None:
         self._west_cell = cell
+        if self._west_cell and self._west_cell not in self.neighbors:
+            self.neighbors.append(self._west_cell)
 
     def link(self, cell: "BasicCell", is_bidir: bool = True) -> "BasicCell":
         self.links[cell] = True
