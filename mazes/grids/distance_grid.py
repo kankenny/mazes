@@ -7,7 +7,7 @@ class DistanceGrid(BasicGrid):
         self.distances = None
 
     def contents_of(self, cell) -> str:
-        if self.distances is not None and self.distances[cell] is not None:
+        if self.distances is not None and cell in self.distances.cells:
             return str_base(self.distances[cell], 36)
         else:
             return super().contents_of(cell)

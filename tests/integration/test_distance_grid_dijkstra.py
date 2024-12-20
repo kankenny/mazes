@@ -13,3 +13,9 @@ def test_distance_grid_dijkstra():
     maze.distances = distances
     print(maze)
     maze.to_png(output_name="solved_dijkstra_binary_tree.png")
+
+    sw_coord = grid.rows - 1, 0
+    print("Path from NW corner to SW corner:")
+    maze.distances = distances.path_to(grid[sw_coord])
+    print(maze)
+    maze.to_png(output_name="solved_dijkstra_binary_tree_1.png")
