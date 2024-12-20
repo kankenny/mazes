@@ -11,3 +11,4 @@ def test_distance_grid_dijkstra():
 
     maze.distances = distances
     print(maze)
+    maze.to_png(output_name="solved_dijkstra_binary_tree.png")
