@@ -33,3 +33,14 @@ class Distances:
                     current = neighbor
 
         return breadcrumbs
+
+    def max(self) -> tuple["BasicCell", int]:  # type: ignore[name-defined]
+        max_distance = 0
+        max_cell = self.root
+
+        for cell, distance in self.cells.items():
+            if distance > max_distance:
+                max_cell = cell
+                max_distance = distance
+
+        return max_cell, max_distance
