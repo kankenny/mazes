@@ -81,6 +81,9 @@ class BasicGrid:
     def contents_of(self, cell: BasicCell) -> str:
         return " "
 
+    def background_color_for(self, cell) -> tuple[int, int, int] | None:
+        return None
+
     def to_png(self, cell_size: int = 10, output_name: str = "maze.png") -> None:
         img_width = cell_size * self.cols
         img_height = cell_size * self.rows
@@ -91,20 +94,25 @@ class BasicGrid:
         img = Image.new("RGBA", (img_width + 1, img_height + 1), background)
         draw = ImageDraw.Draw(img)
 
-        for cell in self.iter_each_cell():
-            x1 = cell.col * cell_size
-            y1 = cell.row * cell_size
-            x2 = (cell.col + 1) * cell_size
-            y2 = (cell.row + 1) * cell_size
+        for draw_mode in range(2):
+            for cell in self.iter_each_cell():
+                x1 = cell.col * cell_size
+                y1 = cell.row * cell_size
+                x2 = (cell.col + 1) * cell_size
+                y2 = (cell.row + 1) * cell_size
 
-            if not cell.north_cell:
-                draw.line([x1, y1, x2, y1], wall, 1, None)
-            if not cell.west_cell:
-                draw.line([x1, y1, x1, y2], wall, 1, None)
-            if not cell.is_linked(cell.east_cell):  # type: ignore[arg-type]
-                draw.line([x2, y1, x2, y2], wall, 1, None)
-            if not cell.is_linked(cell.south_cell):  # type: ignore[arg-type]
-                draw.line([x1, y2, x2, y2], wall, 1, None)
+                if draw_mode == 0:  # Background Mode
+                    color = self.background_color_for(cell)
+                    draw.rectangle((x1, y1, x2, y2), fill=color)
+                else:  # Wall Mode
+                    if not cell.north_cell:
+                        draw.line([x1, y1, x2, y1], wall, 1, None)
+                    if not cell.west_cell:
+                        draw.line([x1, y1, x1, y2], wall, 1, None)
+                    if not cell.is_linked(cell.east_cell):  # type: ignore[arg-type]
+                        draw.line([x2, y1, x2, y2], wall, 1, None)
+                    if not cell.is_linked(cell.south_cell):  # type: ignore[arg-type]
+                        draw.line([x1, y2, x2, y2], wall, 1, None)
 
         img.show()
         img.save(output_name)

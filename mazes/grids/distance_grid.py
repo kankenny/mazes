@@ -2,8 +2,8 @@ from .basic_grid import BasicGrid
 
 
 class DistanceGrid(BasicGrid):
-    def __init__(self, rows: int, columns: int) -> None:
-        super().__init__(rows, columns)
+    def __init__(self, rows: int, cols: int) -> None:
+        super().__init__(rows, cols)
         self.distances = None
 
     def contents_of(self, cell) -> str:
