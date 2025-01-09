@@ -15,4 +15,4 @@ def test_colored_grid():
     colors = ["reds", "blues", "yellows", "greens", "purples", "oranges", "blacks"]
 
     for color in colors:
-        maze.to_png(output_name=f"colored_maze_{color}.png", cell_color=color)
+        maze.to_png(output_name=f"examples/colored_maze_{color}.png", cell_color=color)

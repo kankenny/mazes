@@ -15,4 +15,4 @@ def test_aldous_broder():
     maze.distances = distances
 
     print(maze)
-    maze.to_png(output_name="aldous_broder.png", cell_color="violets")
+    maze.to_png(output_name="examples/aldous_broder.png")

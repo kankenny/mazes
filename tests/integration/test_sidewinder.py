@@ -9,4 +9,4 @@ def test_sidewinder():
     assert maze is not None
 
     print(maze)
-    maze.to_png(output_name="sidewinder.png")
+    maze.to_png(output_name="examples/sidewinder.png")
