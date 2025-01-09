@@ -81,7 +81,7 @@ class BasicGrid:
     def contents_of(self, cell: BasicCell) -> str:
         return " "
 
-    def background_color_for(self, cell) -> tuple[int, int, int] | None:
+    def background_color_for(self, cell: BasicCell) -> tuple[int, int, int] | None:
         return None
 
     def to_png(self, cell_size: int = 10, output_name: str = "maze.png") -> None:

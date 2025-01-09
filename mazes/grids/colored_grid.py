@@ -16,13 +16,14 @@ class ColoredGrid(BasicGrid):
     def distances(self, distances: Distances) -> None:
         self._distances = distances
 
-    def background_color_for(self, cell):
+    def background_color_for(self, cell, c=(255, 0, 0)):
         farthest_cell, max_dist = self.distances.max()
 
-        distance = self.distances.cells[cell] if cell in self.distances.cells else 0.1
-        intensity = (max_dist - distance) / max_dist
+        distance = self.distances.cells.get(cell, 0.1)
+        intensity = distance / max_dist
 
-        dark = round(255 * intensity)
-        bright = 128 + round(127 * intensity)
+        r = round((1 - intensity) * 255 + intensity * c[0])
+        g = round((1 - intensity) * 255 + intensity * c[1])
+        b = round((1 - intensity) * 255 + intensity * c[2])
 
-        return dark, dark, bright
+        return r, g, b
