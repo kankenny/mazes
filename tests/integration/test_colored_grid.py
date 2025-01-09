@@ -12,7 +12,7 @@ def test_colored_grid():
     distances = start.distances()
     maze.distances = distances
 
-    colors = ["reds", "blue", "yellows", "greens", "purples", "oranges"]
+    colors = ["reds", "blues", "yellows", "greens", "purples", "oranges", "blacks"]
 
     for color in colors:
         maze.to_png(output_name=f"{color}_colored_maze.png", cell_color=color)
