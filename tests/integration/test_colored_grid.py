@@ -5,7 +5,16 @@ from mazes.mazes import AldousBroder, BinaryTree, Sidewinder
 
 
 def test_colored_grid():
-    colors = ["reds", "blues", "yellows", "greens", "purples", "oranges", "whites", "blacks"]
+    colors = [
+        "reds",
+        "blues",
+        "yellows",
+        "greens",
+        "purples",
+        "oranges",
+        "whites",
+        "blacks",
+    ]
 
     for color in colors:
         grid = ColoredGrid(25, 25)
