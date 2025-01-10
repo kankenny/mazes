@@ -27,4 +27,8 @@ def test_gif_maze():
 
         distances = start.distances()
         maze.distances = distances
-        maze.to_gif(output_name=f"examples/gif_maze_{color}.gif", cell_color=color, display_distances=True)
+        maze.to_gif(
+            output_name=f"examples/gif_maze_{color}.gif",
+            cell_color=color,
+            display_distances=True,
+        )

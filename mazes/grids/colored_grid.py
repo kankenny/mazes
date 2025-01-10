@@ -1,4 +1,4 @@
-from PIL import Image, ImageDraw, ImageFont
+from PIL import Image, ImageDraw
 
 from mazes.heuristics.distances import Distances
 from mazes.util.colors import get_rgb
@@ -11,7 +11,7 @@ class ColoredGrid(DistanceGrid):
         super().__init__(rows, cols)
         self.distances = None
 
-    @property
+    @property  # type: ignore[override]
     def distances(self) -> Distances | None:
         return self._distances
 
@@ -37,9 +37,7 @@ class ColoredGrid(DistanceGrid):
 
         return r, g, b
 
-    def background_distance_for(
-        self, cell
-    ) -> str:
+    def background_distance_for(self, cell) -> str:
         if self.distances is not None:
             dist_str = str(self.distances[cell])
         else:
@@ -48,7 +46,11 @@ class ColoredGrid(DistanceGrid):
         return dist_str
 
     def to_png(
-        self, cell_size: int = 15, output_name: str = "maze.png", cell_color: tuple[int, int, int]=(255, 0, 0), display_distances:bool=False
+        self,
+        cell_size: int = 15,
+        output_name: str = "maze.png",
+        display_distances: bool = False,
+        cell_color: tuple[int, int, int] = (255, 0, 0),
     ) -> None:
         img_width = cell_size * self.cols
         img_height = cell_size * self.rows
@@ -71,9 +73,7 @@ class ColoredGrid(DistanceGrid):
                     draw.rectangle((x1, y1, x2, y2), fill=color)
 
                     if display_distances:
-                        dist = self.background_distance_for(
-                            cell
-                        )
+                        dist = self.background_distance_for(cell)
                         text_bbox = draw.textbbox((0, 0), dist)
                         text_width = text_bbox[2] - text_bbox[0]
                         text_height = text_bbox[3] - text_bbox[1]
@@ -101,9 +101,9 @@ class ColoredGrid(DistanceGrid):
         duration=500,
         loop=0,
         output_name: str = "maze.gif",
-        cell_color: tuple[int, int, int]=(255, 0, 0),
-        display_distances:bool = False
-    ) -> None:
+        display_distances: bool = False,
+        cell_color: tuple[int, int, int] = (255, 0, 0),
+    ) -> None:  # type: ignore[override]
         """
         Collect the frame by frame creation or traversal of a maze
         and saves a gif format of it
@@ -131,9 +131,7 @@ class ColoredGrid(DistanceGrid):
                     draw.rectangle((x1, y1, x2, y2), fill=color)
 
                     if display_distances:
-                        dist = self.background_distance_for(
-                            cell
-                        )
+                        dist = self.background_distance_for(cell)
                         text_bbox = draw.textbbox((0, 0), dist)
                         text_width = text_bbox[2] - text_bbox[0]
                         text_height = text_bbox[3] - text_bbox[1]

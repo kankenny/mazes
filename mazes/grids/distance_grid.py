@@ -1,4 +1,4 @@
-from PIL import Image, ImageDraw, ImageFont
+from PIL import Image, ImageDraw
 
 from .basic_grid import BasicGrid
 
@@ -14,9 +14,7 @@ class DistanceGrid(BasicGrid):
         else:
             return super().contents_of(cell)
 
-    def background_distance_for(
-        self, cell
-    ) -> str:
+    def background_distance_for(self, cell) -> str:
         if self.distances is not None:
             dist_str = str(self.distances[cell])
         else:
@@ -24,7 +22,12 @@ class DistanceGrid(BasicGrid):
 
         return dist_str
 
-    def to_png(self, cell_size: int = 15, output_name: str = "maze.png", display_distances:bool=False) -> None:
+    def to_png(
+        self,
+        cell_size: int = 15,
+        output_name: str = "maze.png",
+        display_distances: bool = False,
+    ) -> None:
         img_width = cell_size * self.cols
         img_height = cell_size * self.rows
 
@@ -46,9 +49,7 @@ class DistanceGrid(BasicGrid):
                     draw.rectangle((x1, y1, x2, y2), fill=color)
 
                     if display_distances:
-                        dist = self.background_distance_for(
-                            cell
-                        )
+                        dist = self.background_distance_for(cell)
                         text_bbox = draw.textbbox((0, 0), dist)
                         text_width = text_bbox[2] - text_bbox[0]
                         text_height = text_bbox[3] - text_bbox[1]
@@ -71,7 +72,12 @@ class DistanceGrid(BasicGrid):
         img.save(output_name)
 
     def to_gif(
-        self, cell_size: int = 15, duration=500, loop=0, output_name: str = "maze.gif", display_distances:bool=False
+        self,
+        cell_size: int = 15,
+        duration=500,
+        loop=0,
+        output_name: str = "maze.gif",
+        display_distances: bool = False,
     ) -> None:
         """
         Collect the frame by frame creation or traversal of a maze
@@ -100,9 +106,7 @@ class DistanceGrid(BasicGrid):
                     draw.rectangle((x1, y1, x2, y2), fill=color)
 
                     if display_distances:
-                        dist = self.background_distance_for(
-                            cell
-                        )
+                        dist = self.background_distance_for(cell)
                         text_bbox = draw.textbbox((0, 0), dist)
                         text_width = text_bbox[2] - text_bbox[0]
                         text_height = text_bbox[3] - text_bbox[1]
