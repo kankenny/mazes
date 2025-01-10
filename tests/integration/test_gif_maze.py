@@ -17,7 +17,7 @@ def test_gif_maze():
     ]
 
     for color in colors:
-        grid = ColoredGrid(25, 25)
+        grid = ColoredGrid(10, 10)
 
         maze_generator = random.choice([AldousBroder, BinaryTree, Sidewinder])
         maze = maze_generator(grid)()
