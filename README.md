@@ -25,6 +25,7 @@
 ![Colored Maze Greens](examples/colored_maze_greens.png)
 ![Colored Maze Oranges](examples/colored_maze_oranges.png)
 ![Colored Maze Purples](examples/colored_maze_purples.png)
+![Colored Maze Grays](examples/colored_maze_%28120%2C%20120%2C%20120%29.png)
 ![Colored Maze Blacks](examples/colored_maze_blacks.png)
 
 ## Aldous-Broder Maze
