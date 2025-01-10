@@ -13,6 +13,7 @@ def test_colored_grid():
         "purples",
         "oranges",
         "whites",
+        (69, 69, 69),
         "blacks",
     ]
 
