@@ -138,7 +138,7 @@ class DistanceGrid(BasicGrid):
             loop=loop,
         )
 
-        optimize_gif(output_name, duration)
+        optimize_gif(output_name, duration, loop)
 
 
 # With help of https://github.com/crux888 and his similar repo

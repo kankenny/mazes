@@ -31,4 +31,5 @@ def test_gif_maze():
             output_name=f"examples/gif_maze_{color}.gif",
             cell_color=color,
             display_distances=True,
+            loop=1,  # No loop
         )

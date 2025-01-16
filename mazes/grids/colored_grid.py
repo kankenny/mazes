@@ -162,4 +162,4 @@ class ColoredGrid(DistanceGrid):
             loop=loop,
         )
 
-        optimize_gif(output_name, duration)
+        optimize_gif(output_name, duration, loop)
