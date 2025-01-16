@@ -29,7 +29,7 @@
 ![Colored Maze Grays](examples/colored_maze_%2869%2C%2069%2C%2069%29.png)
 ![Colored Maze Blacks](examples/colored_maze_blacks.png)
 
-## GIFs
+## Video Formats
 ![GIF Maze Reds](examples/gif_maze_reds.gif)
 ![GIF Maze Blues](examples/gif_maze_blues.gif)
 ![GIF Maze Yellows](examples/gif_maze_yellows.gif)
@@ -38,6 +38,16 @@
 ![GIF Maze Purples](examples/gif_maze_purples.gif)
 ![GIF Maze Whites](examples/gif_maze_whites.gif)
 ![GIF Maze Blacks](examples/gif_maze_blacks.gif)
+
+## Distances
+![GIF Maze Reds](examples/gif_maze_reds_.gif)
+![GIF Maze Blues](examples/gif_maze_blues_.gif)
+![GIF Maze Yellows](examples/gif_maze_yellows_.gif)
+![GIF Maze Greens](examples/gif_maze_greens_.gif)
+![GIF Maze Oranges](examples/gif_maze_oranges_.gif)
+![GIF Maze Purples](examples/gif_maze_purples_.gif)
+![GIF Maze Whites](examples/gif_maze_whites_.gif)
+![GIF Maze Blacks](examples/gif_maze_blacks_.gif)
 
 ## Aldous-Broder Maze
 ![Aldous-Broder Maze](examples/aldous_broder.png)
