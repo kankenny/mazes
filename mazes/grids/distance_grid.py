@@ -85,6 +85,9 @@ class DistanceGrid(BasicGrid):
         Collect the frame by frame creation or traversal of a maze
         and saves a gif format of it
         """
+        SIZE_FACTOR = 2.5
+        cell_size = int(cell_size * SIZE_FACTOR)
+
         frames = []
 
         img_width = cell_size * self.cols
@@ -93,7 +96,9 @@ class DistanceGrid(BasicGrid):
         background = (255, 255, 255)
         wall = (0, 0, 0)
 
-        img = Image.new("RGBA", (img_width + 1, img_height + 1), background)
+        img_dimension = (img_width + 1, img_height + 1)
+
+        img = Image.new("RGBA", img_dimension, background)
         draw = ImageDraw.Draw(img)
 
         for draw_mode in range(2):
@@ -138,7 +143,7 @@ class DistanceGrid(BasicGrid):
             loop=loop,
         )
 
-        optimize_gif(output_name, duration, loop)
+        optimize_gif(output_name, duration, loop, img_dimension)
 
 
 # With help of https://github.com/crux888 and his similar repo
