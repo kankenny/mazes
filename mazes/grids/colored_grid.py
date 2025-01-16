@@ -100,7 +100,7 @@ class ColoredGrid(DistanceGrid):
         self,
         cell_size: int = 15,
         duration=5,
-        loop=1,
+        loop=0,
         output_name: str = "maze.gif",
         display_distances: bool = False,
         cell_color: tuple[int, int, int] = (255, 0, 0),
@@ -145,7 +145,13 @@ class ColoredGrid(DistanceGrid):
                         text_x = (x1 + x2 - text_width) / 2
                         text_y = (y1 + y2 - text_height) / 2
 
-                        draw.text((text_x, text_y), text=dist, fill="black")
+                        draw.text(
+                            (text_x, text_y),
+                            text=dist,
+                            fill=(255, 255, 255, 122),
+                            stroke_width=1,
+                            stroke_fill=(0, 0, 0, 122),
+                        )
                 else:  # Wall Mode
                     if not cell.north_cell:
                         draw.line([x1, y1, x2, y1], wall, 1, None)
