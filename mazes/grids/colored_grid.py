@@ -2,6 +2,7 @@ from PIL import Image, ImageDraw
 
 from mazes.heuristics.distances import Distances
 from mazes.util.colors import get_rgb
+from mazes.util.vid_optimizer import optimize_gif
 
 from .distance_grid import DistanceGrid
 
@@ -98,8 +99,8 @@ class ColoredGrid(DistanceGrid):
     def to_gif(
         self,
         cell_size: int = 15,
-        duration=0,
-        loop=0,
+        duration=5,
+        loop=1,
         output_name: str = "maze.gif",
         display_distances: bool = False,
         cell_color: tuple[int, int, int] = (255, 0, 0),
@@ -157,6 +158,8 @@ class ColoredGrid(DistanceGrid):
             save_all=True,
             append_images=frames[1:],
             optimize=False,
-            duration=duration,
+            duration=0,
             loop=loop,
         )
+
+        optimize_gif(output_name, duration)

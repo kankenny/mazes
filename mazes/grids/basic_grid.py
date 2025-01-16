@@ -4,6 +4,7 @@ from typing import Generator, Iterator
 from PIL import Image, ImageDraw
 
 from mazes.cells.basic_cell import BasicCell
+from mazes.util.vid_optimizer import optimize_gif
 
 
 class BasicGrid:
@@ -118,7 +119,7 @@ class BasicGrid:
         img.save(output_name)
 
     def to_gif(
-        self, cell_size: int = 15, duration=500, loop=0, output_name: str = "maze.gif"
+        self, cell_size: int = 15, duration=5, loop=1, output_name: str = "maze.gif"
     ) -> None:
         """
         Collect the frame by frame creation or traversal of a maze
@@ -165,6 +166,8 @@ class BasicGrid:
             duration=0,
             loop=loop,
         )
+
+        optimize_gif(output_name, duration)
 
     def random_cell(self) -> BasicCell:
         row = random.randint(0, self.rows - 1)
