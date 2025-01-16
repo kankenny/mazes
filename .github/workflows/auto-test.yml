@@ -35,4 +35,4 @@ jobs:
         run: pip install pytest
 
       - name: Run automated tests
-        run: pytest . -s
+        run: pytest . -s --ignore-glob="*test_*_expensive.py"
