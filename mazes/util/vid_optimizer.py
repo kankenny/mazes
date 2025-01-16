@@ -1,5 +1,6 @@
 from moviepy import VideoFileClip  # type: ignore
 from moviepy.video.fx import AccelDecel  # type: ignore
+# moviepy does not provide type stubs
 
 
 def optimize_gif(
