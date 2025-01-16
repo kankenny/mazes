@@ -1,4 +1,4 @@
-# Mazes
+# Mazes--Need I say more?
 
 ## Maze Example
 ![Maze Example](examples/maze.png)
