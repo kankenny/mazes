@@ -11,6 +11,11 @@ lint:
 	mypy .
 
 test:
+	pytest . -s --ignore-glob="*test_*_expensive.py"
+
+test_:
 	pytest . -s
 
 all: lint test
+
+all_: lint test_
