@@ -4,7 +4,7 @@ from mazes.grids.colored_grid import ColoredGrid
 from mazes.mazes import AldousBroder, BinaryTree, Sidewinder
 
 
-def test_gif_maze():
+def test_gif_distance_maze():
     colors = [
         "reds",
         "blues",
@@ -28,8 +28,8 @@ def test_gif_maze():
         distances = start.distances()
         maze.distances = distances
         maze.to_gif(
-            output_name=f"examples/gif_maze_{color}.gif",
+            output_name=f"examples/gif_maze_{color}_.gif",
             cell_color=color,
-            display_distances=False,
+            display_distances=True,
             loop=1,  # No loop
         )
