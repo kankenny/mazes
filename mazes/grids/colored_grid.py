@@ -1,6 +1,5 @@
 from PIL import Image, ImageDraw
 
-from mazes.heuristics.distances import Distances
 from mazes.util.colors import get_rgb
 from mazes.util.vid_optimizer import optimize_gif
 
@@ -10,15 +9,6 @@ from .distance_grid import DistanceGrid
 class ColoredGrid(DistanceGrid):
     def __init__(self, rows: int, cols: int) -> None:
         super().__init__(rows, cols)
-        self.distances = None
-
-    @property  # type: ignore[override]
-    def distances(self) -> Distances | None:
-        return self._distances
-
-    @distances.setter
-    def distances(self, distances: Distances) -> None:
-        self._distances = distances
 
     def background_color_for(self, cell, color):
         farthest_cell, max_dist = self.distances.max()

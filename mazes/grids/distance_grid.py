@@ -1,5 +1,6 @@
 from PIL import Image, ImageDraw
 
+from mazes.heuristics.distances import Distances
 from mazes.util.vid_optimizer import optimize_gif
 
 from .basic_grid import BasicGrid
@@ -9,6 +10,14 @@ class DistanceGrid(BasicGrid):
     def __init__(self, rows: int, cols: int) -> None:
         super().__init__(rows, cols)
         self.distances = None
+
+    @property  # type: ignore[override]
+    def distances(self) -> Distances | None:
+        return self._distances
+
+    @distances.setter
+    def distances(self, distances: Distances) -> None:
+        self._distances = distances
 
     def contents_of(self, cell) -> str:
         if self.distances is not None and cell in self.distances.cells:
