@@ -98,7 +98,7 @@ class ColoredGrid(DistanceGrid):
     def to_gif(
         self,
         cell_size: int = 15,
-        duration=500,
+        duration=0,
         loop=0,
         output_name: str = "maze.gif",
         display_distances: bool = False,
@@ -157,6 +157,6 @@ class ColoredGrid(DistanceGrid):
             save_all=True,
             append_images=frames[1:],
             optimize=False,
-            duration=0,
+            duration=duration,
             loop=loop,
         )

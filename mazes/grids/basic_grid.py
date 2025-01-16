@@ -162,7 +162,7 @@ class BasicGrid:
             save_all=True,
             append_images=frames[1:],
             optimize=True,
-            duration=duration,
+            duration=0,
             loop=loop,
         )
 
