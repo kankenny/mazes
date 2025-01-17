@@ -12,13 +12,21 @@ def test_distance_grid_dijkstra():
 
     maze.distances = distances
     print(maze)
-    maze.to_png(output_name="examples/solved_dijkstra_binary_tree.png")
+    maze.to_png(
+        output_name="examples/solved_dijkstra_binary_tree.png",
+        display_distances=True,
+        cell_size=30,
+    )
 
     sw_coord = grid.rows - 1, 0
     print("Path from NW corner to SW corner:")
     maze.distances = distances.path_to(grid[sw_coord])
     print(maze)
-    maze.to_png(output_name="examples/solved_dijkstra_binary_tree_1.png")
+    maze.to_png(
+        output_name="examples/solved_dijkstra_binary_tree_1.png",
+        display_distances=True,
+        cell_size=30,
+    )
 
 
 def test_max_distance_dijkstra():
@@ -36,4 +44,8 @@ def test_max_distance_dijkstra():
     print("A longest path in the maze:")
     maze.distances = new_distances.path_to(goal)
     print(maze)
-    maze.to_png(output_name="examples/dijkstra_longest_path.png")
+    maze.to_png(
+        output_name="examples/dijkstra_longest_path.png",
+        display_distances=True,
+        cell_size=30,
+    )
