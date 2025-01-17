@@ -14,13 +14,16 @@
 ## Solved Dijkstra Binary Tree Maze
 ![Solved Dijkstra Binary Tree Maze](examples/solved_dijkstra_binary_tree.png)
 
-## Another Solved Dijkstra Binary Tree Maze
-![Another Solved Dijkstra Binary Tree Maze](examples/solved_dijkstra_binary_tree_1.png)
-
 ## Longest Path Dijkstra Maze
 ![Longest Path Dijkstra Maze](examples/dijkstra_longest_path.png)
 
-## Colored Maze Examples
+## Aldous-Broder Maze
+![Aldous-Broder Maze](examples/aldous_broder.png)
+
+## Wilson's Maze
+![Aldous-Broder Maze](examples/wilson.png)
+
+## Colored Mazes
 ![Colored Maze Reds](examples/colored_maze_reds.png)
 ![Colored Maze Blues](examples/colored_maze_blues.png)
 ![Colored Maze Yellows](examples/colored_maze_yellows.png)
@@ -50,6 +53,3 @@
 ![GIF Maze Purples](examples/gif_maze_purples_.gif)
 ![GIF Maze Whites](examples/gif_maze_whites_.gif)
 ![GIF Maze Blacks](examples/gif_maze_blacks_.gif)
-
-## Aldous-Broder Maze
-![Aldous-Broder Maze](examples/aldous_broder.png)
