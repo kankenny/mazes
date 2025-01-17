@@ -21,7 +21,10 @@
 ![Aldous-Broder Maze](examples/aldous_broder.png)
 
 ## Wilson's Maze
-![Aldous-Broder Maze](examples/wilson.png)
+![Wilson's Maze](examples/wilson.png)
+
+## Hunt and Kill Maze
+![Hunt and Kill Maze](examples/hunt_and_kill.png)
 
 ## Colored Mazes
 ![Colored Maze Reds](examples/colored_maze_reds.png)
