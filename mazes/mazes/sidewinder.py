@@ -26,6 +26,7 @@ class Sidewinder(BaseMaze):
                         member.link(member.north_cell)
                     run_list.clear()
                 else:
-                    cell.link(cell.east_cell)  # type: ignore[arg-type]
+                    if cell.east_cell:
+                        cell.link(cell.east_cell)
 
         return self.grid
