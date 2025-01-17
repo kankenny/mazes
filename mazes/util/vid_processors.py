@@ -23,4 +23,4 @@ def postprocess_vid(
 ) -> None:
     clip = ImageSequenceClip(frames, fps=fps)
     clip = AccelDecel().apply(clip)
-    clip.write_videofile(file_name, codec="libx264", fps=fps)
+    clip.write_videofile(file_name, codec="mpeg4", fps=fps)
