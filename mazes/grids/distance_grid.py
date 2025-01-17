@@ -37,7 +37,7 @@ class DistanceGrid(BasicGrid):
     def to_png(
         self,
         cell_size: int = 15,
-        wall_thickness: float = 1,
+        wall_thickness: int = 1,
         output_name: str = "maze.png",
         display_distances: bool = False,
     ) -> None:
@@ -87,7 +87,7 @@ class DistanceGrid(BasicGrid):
     def to_gif(
         self,
         cell_size: int = 15,
-        wall_thickness: float = 1,
+        wall_thickness: int = 1,
         duration=5,
         loop=0,
         output_name: str = "maze.gif",
@@ -166,7 +166,7 @@ class DistanceGrid(BasicGrid):
     def to_vid(
         self,
         cell_size: int = 15,
-        wall_thickness: float = 1,
+        wall_thickness: int = 1,
         duration=5,
         output_name: str = "maze.mp4",
         display_distances: bool = False,

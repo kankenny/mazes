@@ -3,7 +3,7 @@ from mazes.grids.basic_grid import BasicGrid
 
 
 def test_basic_grid() -> None:
-    thicknesses = [0.5, 1, 1.5]
+    thicknesses = [1, 2, 3]
 
     for thickness in thicknesses:
         SIZE = 10
@@ -19,4 +19,6 @@ def test_basic_grid() -> None:
         for cell in grid:
             assert isinstance(cell, BasicCell)
 
-        grid.to_png(output_name=f"examples/maze_{thickness}.png")
+        grid.to_png(
+            output_name=f"examples/maze_{thickness}.png", wall_thickness=thickness
+        )
