@@ -1,9 +1,9 @@
 # Mazes--Need I say more?
 
 ## Maze Example
-![Maze Example 1](examples/maze_0.5.png)
-![Maze Example 2](examples/maze_1.png)
-![Maze Example 3](examples/maze_1.5.png)
+![Maze Example 1](examples/maze_1.png)
+![Maze Example 2](examples/maze_2.png)
+![Maze Example 3](examples/maze_3.png)
 
 ## Binary Tree Maze
 ![Binary Tree Maze](examples/binary_tree.png)
