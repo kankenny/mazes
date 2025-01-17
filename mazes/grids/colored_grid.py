@@ -42,6 +42,7 @@ class ColoredGrid(DistanceGrid):
     def to_png(
         self,
         cell_size: int = 15,
+        wall_thickness: float = 1,
         output_name: str = "maze.png",
         display_distances: bool = False,
         cell_color: tuple[int, int, int] = (255, 0, 0),
@@ -78,13 +79,13 @@ class ColoredGrid(DistanceGrid):
                         draw.text((text_x, text_y), text=dist, fill="black")
                 else:  # Wall Mode
                     if not cell.north_cell:
-                        draw.line([x1, y1, x2, y1], wall, 1, None)
+                        draw.line([x1, y1, x2, y1], wall, wall_thickness, None)
                     if not cell.west_cell:
-                        draw.line([x1, y1, x1, y2], wall, 1, None)
+                        draw.line([x1, y1, x1, y2], wall, wall_thickness, None)
                     if not cell.is_linked(cell.east_cell):  # type: ignore[arg-type]
-                        draw.line([x2, y1, x2, y2], wall, 1, None)
+                        draw.line([x2, y1, x2, y2], wall, wall_thickness, None)
                     if not cell.is_linked(cell.south_cell):  # type: ignore[arg-type]
-                        draw.line([x1, y2, x2, y2], wall, 1, None)
+                        draw.line([x1, y2, x2, y2], wall, wall_thickness, None)
 
         img.show()
         img.save(output_name)
@@ -92,6 +93,7 @@ class ColoredGrid(DistanceGrid):
     def to_gif(
         self,
         cell_size: int = 15,
+        wall_thickness: float = 1,
         duration=5,
         loop=0,
         output_name: str = "maze.gif",
@@ -147,13 +149,13 @@ class ColoredGrid(DistanceGrid):
                         )
                 else:  # Wall Mode
                     if not cell.north_cell:
-                        draw.line([x1, y1, x2, y1], wall, 1, None)
+                        draw.line([x1, y1, x2, y1], wall, wall_thickness, None)
                     if not cell.west_cell:
-                        draw.line([x1, y1, x1, y2], wall, 1, None)
+                        draw.line([x1, y1, x1, y2], wall, wall_thickness, None)
                     if not cell.is_linked(cell.east_cell):  # type: ignore[arg-type]
-                        draw.line([x2, y1, x2, y2], wall, 1, None)
+                        draw.line([x2, y1, x2, y2], wall, wall_thickness, None)
                     if not cell.is_linked(cell.south_cell):  # type: ignore[arg-type]
-                        draw.line([x1, y2, x2, y2], wall, 1, None)
+                        draw.line([x1, y2, x2, y2], wall, wall_thickness, None)
 
                 frames.append(img.copy())
 
@@ -171,6 +173,7 @@ class ColoredGrid(DistanceGrid):
     def to_vid(
         self,
         cell_size: int = 15,
+        wall_thickness: float = 1,
         duration=5,
         output_name: str = "maze.mp4",
         display_distances: bool = False,
@@ -223,13 +226,13 @@ class ColoredGrid(DistanceGrid):
                         )
                 else:  # Wall Mode
                     if not cell.north_cell:
-                        draw.line([x1, y1, x2, y1], wall, 1, None)
+                        draw.line([x1, y1, x2, y1], wall, wall_thickness, None)
                     if not cell.west_cell:
-                        draw.line([x1, y1, x1, y2], wall, 1, None)
+                        draw.line([x1, y1, x1, y2], wall, wall_thickness, None)
                     if not cell.is_linked(cell.east_cell):  # type: ignore[arg-type]
-                        draw.line([x2, y1, x2, y2], wall, 1, None)
+                        draw.line([x2, y1, x2, y2], wall, wall_thickness, None)
                     if not cell.is_linked(cell.south_cell):  # type: ignore[arg-type]
-                        draw.line([x1, y2, x2, y2], wall, 1, None)
+                        draw.line([x1, y2, x2, y2], wall, wall_thickness, None)
 
                 frames.append(np.array(img.copy()))
 

@@ -86,7 +86,12 @@ class BasicGrid:
     def background_color_for(self, cell: BasicCell) -> tuple[int, int, int] | None:
         return None
 
-    def to_png(self, cell_size: int = 15, output_name: str = "maze.png") -> None:
+    def to_png(
+        self,
+        cell_size: int = 15,
+        wall_thickness: float = 1,
+        output_name: str = "maze.png",
+    ) -> None:
         img_width = cell_size * self.cols
         img_height = cell_size * self.rows
 
@@ -108,19 +113,24 @@ class BasicGrid:
                     draw.rectangle((x1, y1, x2, y2), fill=color)
                 else:  # Wall Mode
                     if not cell.north_cell:
-                        draw.line([x1, y1, x2, y1], wall, 1, None)
+                        draw.line([x1, y1, x2, y1], wall, wall_thickness, None)
                     if not cell.west_cell:
-                        draw.line([x1, y1, x1, y2], wall, 1, None)
+                        draw.line([x1, y1, x1, y2], wall, wall_thickness, None)
                     if not cell.is_linked(cell.east_cell):  # type: ignore[arg-type]
-                        draw.line([x2, y1, x2, y2], wall, 1, None)
+                        draw.line([x2, y1, x2, y2], wall, wall_thickness, None)
                     if not cell.is_linked(cell.south_cell):  # type: ignore[arg-type]
-                        draw.line([x1, y2, x2, y2], wall, 1, None)
+                        draw.line([x1, y2, x2, y2], wall, wall_thickness, None)
 
         img.show()
         img.save(output_name)
 
     def to_gif(
-        self, cell_size: int = 15, duration=5, loop=0, output_name: str = "maze.gif"
+        self,
+        cell_size: int = 15,
+        wall_thickness: float = 1,
+        duration=5,
+        loop=0,
+        output_name: str = "maze.gif",
     ) -> None:
         """
         Collect the frame by frame creation or traversal of a maze
@@ -154,13 +164,13 @@ class BasicGrid:
                     draw.rectangle((x1, y1, x2, y2), fill=color)
                 else:  # Wall Mode
                     if not cell.north_cell:
-                        draw.line([x1, y1, x2, y1], wall, 1, None)
+                        draw.line([x1, y1, x2, y1], wall, wall_thickness, None)
                     if not cell.west_cell:
-                        draw.line([x1, y1, x1, y2], wall, 1, None)
+                        draw.line([x1, y1, x1, y2], wall, wall_thickness, None)
                     if not cell.is_linked(cell.east_cell):  # type: ignore[arg-type]
-                        draw.line([x2, y1, x2, y2], wall, 1, None)
+                        draw.line([x2, y1, x2, y2], wall, wall_thickness, None)
                     if not cell.is_linked(cell.south_cell):  # type: ignore[arg-type]
-                        draw.line([x1, y2, x2, y2], wall, 1, None)
+                        draw.line([x1, y2, x2, y2], wall, wall_thickness, None)
 
                 frames.append(img.copy())
 
@@ -176,7 +186,11 @@ class BasicGrid:
         postprocess_gif(output_name, duration, loop, img_dimension)
 
     def to_vid(
-        self, cell_size: int = 15, duration=5, output_name: str = "maze.mp4"
+        self,
+        cell_size: int = 15,
+        wall_thickness: float = 1,
+        duration=5,
+        output_name: str = "maze.mp4",
     ) -> None:
         """
         Collect the frame by frame creation or traversal of a maze
@@ -208,13 +222,13 @@ class BasicGrid:
                     draw.rectangle((x1, y1, x2, y2), fill=color)
                 else:  # Wall Mode
                     if not cell.north_cell:
-                        draw.line([x1, y1, x2, y1], wall, 1, None)
+                        draw.line([x1, y1, x2, y1], wall, wall_thickness, None)
                     if not cell.west_cell:
-                        draw.line([x1, y1, x1, y2], wall, 1, None)
+                        draw.line([x1, y1, x1, y2], wall, wall_thickness, None)
                     if not cell.is_linked(cell.east_cell):  # type: ignore[arg-type]
-                        draw.line([x2, y1, x2, y2], wall, 1, None)
+                        draw.line([x2, y1, x2, y2], wall, wall_thickness, None)
                     if not cell.is_linked(cell.south_cell):  # type: ignore[arg-type]
-                        draw.line([x1, y2, x2, y2], wall, 1, None)
+                        draw.line([x1, y2, x2, y2], wall, wall_thickness, None)
 
                 frames.append(np.array(img.copy()))
 
