@@ -267,9 +267,7 @@ class BasicGrid:
                     cell.east_cell = self[row, col + 1]
                     cell.west_cell = self[row, col - 1]
 
-    def dead_ends(self) -> None:
+    def dead_ends(self) -> list[BasicCell]:
         deadend_cells = [c for c in self.iter_each_cell() if len(c.links) == 1]
-        
-        return deadend_cells
-        
 
+        return deadend_cells

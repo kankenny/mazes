@@ -1,5 +1,5 @@
 from mazes.grids.basic_grid import BasicGrid
-from mazes.mazes import AldousBroder, BinaryTree, Sidewinder, HuntAndKill, Wilson
+from mazes.mazes import AldousBroder, BinaryTree, HuntAndKill, Sidewinder, Wilson
 
 
 def test_deadends():
@@ -27,7 +27,8 @@ def test_deadends():
     total_cells = maze_dim * maze_dim
     print(f"\nAverage deadends per {maze_dim}x{maze_dim} maze ({total_cells} cells):")
 
-    for maze, average in sorted(maze_averages.items(), key=lambda item: item[1], reverse=True):
+    for maze, average in sorted(
+        maze_averages.items(), key=lambda item: item[1], reverse=True
+    ):
         percentage = (average * 100) / total_cells
         print(f"{maze:<15} {average:6.2f}/625     ({percentage:.2f}%)")
-
