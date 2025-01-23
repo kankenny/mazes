@@ -1,7 +1,7 @@
 import random
 from random import choice
 
-from mazes.grids.basic_grid import BasicGrid
+from mazes.grids import BasicGrid
 from mazes.mazes.base_maze import BaseMaze
 
 

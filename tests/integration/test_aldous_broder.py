@@ -1,4 +1,4 @@
-from mazes.grids.colored_grid import ColoredGrid
+from mazes.grids import ColoredGrid
 from mazes.mazes import AldousBroder
 
 

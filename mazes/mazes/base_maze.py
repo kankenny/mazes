@@ -1,4 +1,4 @@
-from mazes.grids.basic_grid import BasicGrid
+from mazes.grids import BasicGrid
 
 
 class BaseMaze:

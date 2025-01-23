@@ -1,4 +1,4 @@
-from mazes.grids.distance_grid import DistanceGrid
+from mazes.grids import DistanceGrid
 from mazes.mazes import BinaryTree
 
 

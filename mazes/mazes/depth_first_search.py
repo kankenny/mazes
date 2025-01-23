@@ -1,8 +1,8 @@
 from random import choice
 from typing import Optional
 
-from mazes.cells.basic_cell import BasicCell
-from mazes.grids.basic_grid import BasicGrid
+from mazes.cells import BasicCell
+from mazes.grids import BasicGrid
 from mazes.mazes.base_maze import BaseMaze
 
 

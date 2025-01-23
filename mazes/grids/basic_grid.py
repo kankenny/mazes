@@ -4,7 +4,7 @@ from typing import Generator, Iterator
 import numpy as np
 from PIL import Image, ImageDraw
 
-from mazes.cells.basic_cell import BasicCell
+from mazes.cells import BasicCell
 from mazes.util.vid_processors import postprocess_gif, postprocess_vid
 
 

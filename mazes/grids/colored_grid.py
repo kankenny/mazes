@@ -1,6 +1,4 @@
 import numpy as np
-
-# from moviepy import ImageSequenceClip  # type: ignore
 from PIL import Image, ImageDraw
 
 from mazes.util.colors import get_rgb
