@@ -33,6 +33,7 @@ def test_gif_maze():
             cell_color=color,
             display_distances=False,
             loop=1,  # One loop
+            duration=3,
         )
 
         maze.to_gif(
@@ -40,4 +41,5 @@ def test_gif_maze():
             cell_color=color,
             display_distances=True,
             loop=1,  # One loop
+            duration=3,
         )
