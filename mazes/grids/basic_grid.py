@@ -266,3 +266,10 @@ class BasicGrid:
                     cell.south_cell = self[row + 1, col]
                     cell.east_cell = self[row, col + 1]
                     cell.west_cell = self[row, col - 1]
+
+    def dead_ends(self) -> None:
+        deadend_cells = [c for c in self.iter_each_cell() if len(c.links) == 1]
+        
+        return deadend_cells
+        
+
