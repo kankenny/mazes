@@ -9,4 +9,4 @@ def test_binary_tree():
     assert maze is not None
 
     print(maze)
-    maze.to_png(output_name="examples/binary_tree.png")
+    maze.to_png(output_name="examples/mazes/binary_tree.png")

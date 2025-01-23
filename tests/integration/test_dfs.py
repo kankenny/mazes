@@ -15,4 +15,4 @@ def test_dfs():
     maze.distances = distances
 
     print(maze)
-    maze.to_png(output_name="examples/dfs.png")
+    maze.to_png(output_name="examples/mazes/dfs.png")

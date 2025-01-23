@@ -15,4 +15,4 @@ def test_hunt_and_kill():
     maze.distances = distances
 
     print(maze)
-    maze.to_png(output_name="examples/hunt_and_kill.png")
+    maze.to_png(output_name="examples/mazes/hunt_and_kill.png")

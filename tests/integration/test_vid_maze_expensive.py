@@ -12,4 +12,4 @@ def test_colored_grid():
 
     distances = start.distances()
     maze.distances = distances
-    maze.to_vid(output_name="examples/vid_maze.mp4", display_distances=True)
+    maze.to_vid(output_name="examples/mazes/vid_maze.mp4", display_distances=True)

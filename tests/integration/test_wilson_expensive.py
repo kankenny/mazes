@@ -15,4 +15,4 @@ def test_wilson():
     maze.distances = distances
 
     print(maze)
-    maze.to_png(output_name="examples/wilson.png")
+    maze.to_png(output_name="examples/mazes/wilson.png")

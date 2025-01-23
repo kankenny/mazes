@@ -20,5 +20,5 @@ def test_basic_grid() -> None:
             assert isinstance(cell, BasicCell)
 
         grid.to_png(
-            output_name=f"examples/maze_{thickness}.png", wall_thickness=thickness
+            output_name=f"examples/grids/grid_{thickness}.png", wall_thickness=thickness
         )

@@ -29,7 +29,7 @@ def test_gif_maze():
         maze.distances = distances
 
         maze.to_gif(
-            output_name=f"examples/gif_maze_{color}.gif",
+            output_name=f"examples/mazes/gif_maze_{color}.gif",
             cell_color=color,
             display_distances=False,
             loop=1,  # One loop
@@ -37,7 +37,7 @@ def test_gif_maze():
         )
 
         maze.to_gif(
-            output_name=f"examples/gif_maze_{color}_.gif",
+            output_name=f"examples/mazes/gif_maze_{color}_.gif",
             cell_color=color,
             display_distances=True,
             loop=1,  # One loop

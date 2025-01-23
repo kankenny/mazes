@@ -271,3 +271,8 @@ class BasicGrid:
         deadend_cells = [c for c in self.iter_each_cell() if len(c.links) == 1]
 
         return deadend_cells
+
+    # def init_mask(self) -> None:
+    #     self.bits: list[list[bool]] = [
+    #         [True for _ in range(self.cols)] for _ in range(self.rows)
+    #     ]
