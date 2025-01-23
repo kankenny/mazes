@@ -4,8 +4,10 @@ from typing import Optional
 from mazes.cells import BasicCell
 from mazes.grids import BasicGrid
 from mazes.mazes.base_maze import BaseMaze
+from mazes.util.maze_profiler import maze_profiler
 
 
+@maze_profiler
 class DepthFirstSearch(BaseMaze):
     def __call__(self, starting_cell: Optional[BasicCell] = None) -> BasicGrid:
         if starting_cell is None:

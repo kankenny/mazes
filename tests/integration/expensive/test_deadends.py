@@ -1,30 +1,13 @@
 from mazes.grids import BasicGrid
-from mazes.mazes import (
-    AldousBroder,
-    BinaryTree,
-    DepthFirstSearch,
-    HuntAndKill,
-    Sidewinder,
-    Wilson,
-)
+from mazes.util.maze_profiler import maze_registry
 
 
 def test_deadends():
-    maze_algorithms = [
-        AldousBroder,
-        BinaryTree,
-        Sidewinder,
-        HuntAndKill,
-        Wilson,
-        DepthFirstSearch,
-    ]
     maze_dim = 25
-
     maze_averages = {}
-
     sample_size = 100
 
-    for maze_alg in maze_algorithms:
+    for maze_alg in maze_registry:
         print("Running: ", maze_alg.__name__)
 
         deadend_counts = []
@@ -45,4 +28,4 @@ def test_deadends():
         maze_averages.items(), key=lambda item: item[1], reverse=True
     ):
         percentage = (average * 100) / total_cells
-        print(f"{maze:<15} {average:6.2f}/{total_cells}     ({percentage:.2f}%)")
+        print(f"{maze:<20} {average:6.2f}/{total_cells}     ({percentage:.2f}%)")

@@ -2,8 +2,10 @@ from random import choice
 
 from mazes.grids import BasicGrid
 from mazes.mazes.base_maze import BaseMaze
+from mazes.util.maze_profiler import maze_profiler
 
 
+@maze_profiler
 class AldousBroder(BaseMaze):
     def __call__(self) -> BasicGrid:
         cell = self.grid.random_cell()
