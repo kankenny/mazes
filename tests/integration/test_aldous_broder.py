@@ -1,5 +1,5 @@
 from mazes.grids.colored_grid import ColoredGrid
-from mazes.mazes.aldous_broder import AldousBroder
+from mazes.mazes import AldousBroder
 
 
 def test_aldous_broder():

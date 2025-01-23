@@ -1,5 +1,5 @@
 from mazes.grids.basic_grid import BasicGrid
-from mazes.mazes.sidewinder import Sidewinder
+from mazes.mazes import Sidewinder
 
 
 def test_sidewinder():

@@ -1,5 +1,5 @@
 from mazes.grids.colored_grid import ColoredGrid
-from mazes.mazes.depth_first_search import DepthFirstSearch
+from mazes.mazes import DepthFirstSearch
 
 
 def test_dfs():

@@ -1,5 +1,5 @@
 from mazes.grids.basic_grid import BasicGrid
-from mazes.mazes.binary_tree import BinaryTree
+from mazes.mazes import BinaryTree
 
 
 def test_binary_tree():

@@ -1,5 +1,5 @@
 from mazes.grids.colored_grid import ColoredGrid
-from mazes.mazes.hunt_and_kill import HuntAndKill
+from mazes.mazes import HuntAndKill
 
 
 def test_hunt_and_kill():

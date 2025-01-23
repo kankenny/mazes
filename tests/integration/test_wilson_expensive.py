@@ -1,5 +1,5 @@
 from mazes.grids.colored_grid import ColoredGrid
-from mazes.mazes.wilson import Wilson
+from mazes.mazes import Wilson
 
 
 def test_wilson():

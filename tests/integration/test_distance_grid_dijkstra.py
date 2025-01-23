@@ -1,5 +1,5 @@
 from mazes.grids.distance_grid import DistanceGrid
-from mazes.mazes.binary_tree import BinaryTree
+from mazes.mazes import BinaryTree
 
 
 def test_distance_grid_dijkstra():
