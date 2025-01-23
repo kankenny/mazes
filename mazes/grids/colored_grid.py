@@ -1,8 +1,7 @@
 import numpy as np
 from PIL import Image, ImageDraw
 
-from mazes.util.colors import get_rgb
-from mazes.util.vid_processors import postprocess_gif, postprocess_vid
+from mazes.util import get_rgb, postprocess_gif, postprocess_vid
 
 from .distance_grid import DistanceGrid
 

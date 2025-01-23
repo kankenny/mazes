@@ -1,8 +1,8 @@
 import numpy as np
 from PIL import Image, ImageDraw
 
-from mazes.heuristics.distances import Distances
-from mazes.util.vid_processors import postprocess_gif, postprocess_vid
+from mazes.heuristics import Distances
+from mazes.util import postprocess_gif, postprocess_vid
 
 from .basic_grid import BasicGrid
 

@@ -5,7 +5,7 @@ import numpy as np
 from PIL import Image, ImageDraw
 
 from mazes.cells import BasicCell
-from mazes.util.vid_processors import postprocess_gif, postprocess_vid
+from mazes.util import postprocess_gif, postprocess_vid
 
 
 class BasicGrid:
