@@ -204,10 +204,12 @@ class BasicGrid:
         img_width = cell_size * self.cols
         img_height = cell_size * self.rows
 
+        img_dimension = (img_width + 1, img_height + 1)
+
         background = (255, 255, 255)
         wall = (0, 0, 0)
 
-        img = Image.new("RGBA", (img_width + 1, img_height + 1), background)
+        img = Image.new("RGBA", img_dimension, background)
         draw = ImageDraw.Draw(img)
 
         for draw_mode in range(2):
@@ -232,7 +234,7 @@ class BasicGrid:
 
                 frames.append(np.array(img.copy()))
 
-        postprocess_vid(frames, output_name)
+        postprocess_vid(frames, output_name, img_dimension)
 
     def random_cell(self) -> BasicCell:
         row = random.randint(0, self.rows - 1)
