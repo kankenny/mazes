@@ -1,7 +1,7 @@
 from collections import defaultdict
 from typing import Optional
 
-from mazes.heuristics.distances import Distances
+from mazes.heuristics import Distances
 
 
 class BasicCell:
