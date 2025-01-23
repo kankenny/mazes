@@ -46,3 +46,18 @@
 ![GIF Maze Purples](examples/mazes/gif_maze_purples_.gif)
 ![GIF Maze Whites](examples/mazes/gif_maze_whites_.gif)
 ![GIF Maze Blacks](examples/mazes/gif_maze_blacks_.gif)
+
+## Maze Algorithm Deadends Analysis
+
+#### Average Deadends per 25x25 Maze (625 cells)
+
+| Algorithm          |      Deadends / Total Cells      | Percentage (%) |
+|--------------------|:-------------------------------:|:--------------:|
+| Wilson             |           182.30 / 625          |     29.17%     |
+| AldousBroder       |           182.09 / 625          |     29.13%     |
+| Sidewinder         |           168.75 / 625          |     27.00%     |
+| BinaryTree         |           158.03 / 625          |     25.28%     |
+| DepthFirstSearch   |            64.91 / 625          |     10.39%     |
+| HuntAndKill        |            61.92 / 625          |      9.91%     |
+
+---
