@@ -161,9 +161,9 @@ class MaskedGrid:
                         draw.line([x1, y1, x2, y1], wall, wall_thickness, None)
                     if not cell.west_cell:
                         draw.line([x1, y1, x1, y2], wall, wall_thickness, None)
-                    if not cell.is_linked(cell.east_cell):  # type: ignore[arg-type]
+                    if cell.east_cell is None or not cell.is_linked(cell.east_cell):
                         draw.line([x2, y1, x2, y2], wall, wall_thickness, None)
-                    if not cell.is_linked(cell.south_cell):  # type: ignore[arg-type]
+                    if cell.south_cell is None or not cell.is_linked(cell.south_cell):
                         draw.line([x1, y2, x2, y2], wall, wall_thickness, None)
 
         img.show()
@@ -215,9 +215,9 @@ class MaskedGrid:
                         draw.line([x1, y1, x2, y1], wall, wall_thickness, None)
                     if not cell.west_cell:
                         draw.line([x1, y1, x1, y2], wall, wall_thickness, None)
-                    if not cell.is_linked(cell.east_cell):  # type: ignore[arg-type]
+                    if cell.east_cell is None or not cell.is_linked(cell.east_cell):
                         draw.line([x2, y1, x2, y2], wall, wall_thickness, None)
-                    if not cell.is_linked(cell.south_cell):  # type: ignore[arg-type]
+                    if cell.south_cell is None or not cell.is_linked(cell.south_cell):
                         draw.line([x1, y2, x2, y2], wall, wall_thickness, None)
 
                 frames.append(img.copy())
@@ -278,9 +278,9 @@ class MaskedGrid:
                         draw.line([x1, y1, x2, y1], wall, wall_thickness, None)
                     if not cell.west_cell:
                         draw.line([x1, y1, x1, y2], wall, wall_thickness, None)
-                    if not cell.is_linked(cell.east_cell):  # type: ignore[arg-type]
+                    if cell.east_cell is None or not cell.is_linked(cell.east_cell):
                         draw.line([x2, y1, x2, y2], wall, wall_thickness, None)
-                    if not cell.is_linked(cell.south_cell):  # type: ignore[arg-type]
+                    if cell.south_cell is None or not cell.is_linked(cell.south_cell):
                         draw.line([x1, y2, x2, y2], wall, wall_thickness, None)
 
                 frames.append(np.array(img.copy()))
@@ -312,6 +312,8 @@ class MaskedGrid:
                     cell.west_cell = self[row, col - 1]
 
     def dead_ends(self) -> list[BasicCell]:
-        deadend_cells = [c for c in self.iter_each_cell() if len(c.links) == 1]
+        deadend_cells = [
+            c for c in self.iter_each_cell() if c is not None and len(c.links) == 1
+        ]
 
         return deadend_cells
