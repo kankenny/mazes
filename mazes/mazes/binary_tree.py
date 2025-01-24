@@ -1,8 +1,9 @@
 from random import choice
 
 from mazes.grids import BasicGrid
-from mazes.mazes.base_maze import BaseMaze
-from mazes.util.maze_profiler import maze_profiler
+from mazes.util import maze_profiler
+
+from .base_maze import BaseMaze
 
 
 @maze_profiler
