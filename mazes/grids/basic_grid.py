@@ -251,8 +251,7 @@ class BasicGrid:
             for cell in row:
                 yield cell
 
-    @staticmethod
-    def prepare_grid(rows: int, cols: int) -> list[list[BasicCell]]:
+    def prepare_grid(self, rows: int, cols: int) -> list[list[BasicCell]]:
         grid: list[list[BasicCell]] = []
         for r in range(rows):
             row = [BasicCell(r, c) for c in range(cols)]
@@ -273,8 +272,3 @@ class BasicGrid:
         deadend_cells = [c for c in self.iter_each_cell() if len(c.links) == 1]
 
         return deadend_cells
-
-    # def init_mask(self) -> None:
-    #     self.bits: list[list[bool]] = [
-    #         [True for _ in range(self.cols)] for _ in range(self.rows)
-    #     ]
