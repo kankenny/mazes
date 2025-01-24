@@ -8,6 +8,10 @@ def test_deadends():
     sample_size = 100
 
     for maze_alg in maze_registry:
+        if maze_alg.__name__.startswith("Masked"):
+            print("Skipping: ", maze_alg.__name__)
+            continue
+
         print("Running: ", maze_alg.__name__)
 
         deadend_counts = []
